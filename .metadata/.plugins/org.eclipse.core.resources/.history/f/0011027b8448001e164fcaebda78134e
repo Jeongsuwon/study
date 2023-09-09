@@ -1,0 +1,219 @@
+package notice;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+import user.UserDAO;
+import user.UserVO;
+
+public class NoticeDAO {
+
+	
+	PreparedStatement ps;
+	ResultSet rs;
+	NoticeVO noticeVO = new NoticeVO();
+	UserDAO userDAO = new UserDAO();
+	
+	Scanner sc = new Scanner(System.in);
+	Connection conn;
+	
+	
+	//공지사항
+		public void notice() {
+			UserVO userVO = userDAO.getUserVO();
+			while(true) {
+				System.out.println("1.공지사항 목록");
+				System.out.println("2.공지사항 작성");
+				System.out.println("3.공지사항 수정");
+				System.out.println("4.공지사항 삭제");
+				System.out.println("5.종료");
+				String choice = sc.nextLine();
+				if(choice.equals("1")) {
+					try {
+						conn=getConn();
+						ps = conn.prepareStatement("SELECT * FROM NOTICE_TBL");
+						rs = ps.executeQuery();
+						if(rs.next()) {
+							
+						}else {
+							System.out.println("현재 작성 된 공지사항이 없습니다.");
+							continue;
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}finally {
+						dbClose();
+					}
+				}else if(choice.equals("2")) {
+					System.out.print("제목:");
+					String title = sc.nextLine();
+					noticeVO.setTitle(title);
+					System.out.println("내용");
+					String content = sc.nextLine();
+					noticeVO.setContent(content);
+					noticeVO.setWriter(userVO.getFirstname() + userVO.getLastname());
+					noticeVO.setId(userVO.getUser_id());
+					try {
+						conn = getConn();
+						ps = conn.prepareStatement("INSERT INTO NOTICE_TBL VALUES(?,?,?,?)");
+						ps.setString(1, noticeVO.getTitle());
+						ps.setString(2, noticeVO.getContent());
+						ps.setString(3, noticeVO.getWriter());
+						ps.setString(4, noticeVO.getId());
+						rs = ps.executeQuery();
+						if(rs.next()) {
+							System.out.println("공지사항이 등록되었습니다.");
+						}else {
+							System.out.println("공지사항 등록에 실패하였습니다.");
+						}
+					} catch (Exception e) {
+						System.out.println("오류");
+					}finally {
+						dbClose();
+					}
+					
+				}else if(choice.equals("3")) {
+					try {
+						while(true) {
+							conn = getConn();
+							ps = conn.prepareStatement("SELECT * FROM NOTICE_TBL");
+							rs = ps.executeQuery();
+							
+							System.out.println("수정하실 글의 번호를 입력해주세요");
+							System.out.println("0.취소");
+							String updateChoice = sc.nextLine(); 
+							try {
+								
+							
+							while(true) {
+								if(updateChoice.equals("0")) {
+									System.out.println("취소되었습니다.");
+									break;
+								}else {
+									ps = conn.prepareStatement("SELECT * FROM NOTICE_TBL WHERE id = ?");
+									ps.setString(1, updateChoice);
+									rs = ps.executeQuery();
+									
+									if(rs.next()) {
+										
+										while(true) {
+											System.out.println("1.제목수정");
+											System.out.println("2.내용수정");
+											System.out.println("3.취소");
+											String update_menu = sc.nextLine();
+											if(update_menu.equals("1")) {
+												System.out.println("수정할 제목을 입력하세요.");
+												String title = sc.nextLine();
+												ps = conn.prepareStatement("UPDATE NOTICE_TBL SET TITLE = ? WHERE id = ?");
+												ps.setString(1, title);
+												ps.setString(2, updateChoice);
+												System.out.println("제목이 수정되었습니다.");
+												
+											}else if(update_menu.equals("2")) {
+												System.out.println("수정할 내용을 입력하세요.");
+												String content = sc.nextLine();
+												ps = conn.prepareStatement("UPDATE NOTICE_TBL SET CONTENT = ? WHERE id = ?");
+												ps.setString(1, content);
+												ps.setString(2, updateChoice);
+												System.out.println("내용이 수정되었습니다.");
+											}else if(update_menu.equals("3")){
+												System.out.println("취소되었습니다.");
+												break;
+											}else {
+												System.out.println("잘못 된 입력입니다.");
+												continue;
+											}
+										}
+									}
+								}
+								
+							}
+							} catch (Exception e) {
+								System.out.println("잘못입력하셨습니다.");
+								
+							}
+							break;
+						}
+					}catch(Exception e) {
+						System.out.println("오류");
+					}
+					
+					
+					
+					
+				
+				}else if(choice.equals("4")) {
+					try {
+						while(true) {
+							conn = getConn();
+							ps = conn.prepareStatement("SELECT * FROM NOTICE_TBL");
+							rs = ps.executeQuery();
+							System.out.println("삭제하실 글의 번호를 입력해주세요");
+							System.out.println("0.취소");
+							String deleteChoice = sc.nextLine();
+							
+							if(rs.getString("writer").equals(userVO.getUser_id())) {
+								ps = conn.prepareStatement("delete from notice_tbl where id = ?");
+								ps.setString(1, deleteChoice);
+								ps.executeUpdate();
+								System.out.println("해당 글이 삭제되었습니다.");
+							}else if(deleteChoice.equals("0")){
+								System.out.println("취소되었습니다.");
+								break;
+							}
+								else {
+									System.out.println("작성하신 아이디와 일치하지 않습니다.");
+									continue;
+							}
+							
+						}
+					} catch (Exception e) {
+						System.out.println("오류");
+					}finally {
+						dbClose();
+					}
+					
+				}else if(choice.equals("5")) {
+						break;
+						
+				}else {
+					System.out.println("잘못된 입력입니다.");
+					continue;
+				}
+			}
+			
+		}
+		
+		//db연동
+		public Connection getConn() {
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				conn = DriverManager.getConnection(url, "c##jsw", "0000");
+			}catch(Exception e) {
+			System.out.println("연결 오류");
+			}
+			return conn;
+			
+		}
+		
+		//스프링에서는 알아서 해주지만 순수 자바에서는 성능저하 방지를 위해 실행
+		public void dbClose() {
+			try {
+				if(rs != null) {
+					rs.close();
+				}if(ps != null) {
+					ps.close();
+				}if(conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+
+}

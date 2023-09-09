@@ -1,0 +1,4 @@
+oracle.driver = oracle.jdbc.driver.OracleDriver
+oracle.url = oracle:jdbc:thin:@211.223.59.99:1521:xe 
+oracle.username = hr
+oracle.userpw = 0000

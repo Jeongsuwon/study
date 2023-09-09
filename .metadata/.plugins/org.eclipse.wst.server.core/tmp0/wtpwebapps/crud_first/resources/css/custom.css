@@ -1,0 +1,144 @@
+.login-container {
+	width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 로그인 폼 제목 스타일 */
+.login-title {
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+/* 입력 필드 스타일 */
+.form-group {
+	margin-bottom: 20px;
+}
+
+/* 레이블 스타일 */
+.label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/* 입력 필드 스타일 */
+.input-field {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+/* 로그인 버튼 스타일 */
+.login-button {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* 로그인 버튼 호버 효과 */
+.login-button:hover {
+	background-color: #0056b3;
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+	color: #ff0000;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+/* 링크 스타일 (비밀번호 재설정 등) */
+.link {
+	color: #007bff;
+	text-decoration: none;
+}
+
+/* 링크 호버 효과 */
+.link:hover {
+	text-decoration: underline;
+}
+
+/* 회원가입 폼 컨테이너 */
+.signup-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.signup-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* 입력 필드 스타일 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* 레이블 스타일 */
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* 입력 필드 스타일 */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 회원가입 버튼 스타일 */
+.signup-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 회원가입 버튼 호버 효과 */
+.signup-button:hover {
+  background-color: #0056b3;
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* 링크 스타일 (로그인 페이지로 이동 등) */
+.link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* 링크 호버 효과 */
+.link:hover {
+  text-decoration: underline;
+}
