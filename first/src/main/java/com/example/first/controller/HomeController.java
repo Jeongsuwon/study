@@ -9,6 +9,6 @@ public class HomeController {
 	@GetMapping("/")
 	public String index() {
 		
-		return "index"; //templates 폴더의 index.html
+		return "index";
 	}
 }

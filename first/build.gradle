@@ -25,6 +25,11 @@ dependencies {
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	implementation 'javax.servlet:jstl'
 	
+	
+	implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.7.5'
+	//
+	implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.7.5'
+	
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.7.11'
 	
