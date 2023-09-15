@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- <link rel="stylesheet" href="/css/styles.css"> -->
+<link rel="stylesheet" href="/css/styles.css">
 <style>
 		div {
     background-color: #f2f2f2;
@@ -54,7 +54,7 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-</style>
+</style>		
 </head>
 <body>
 <div>	

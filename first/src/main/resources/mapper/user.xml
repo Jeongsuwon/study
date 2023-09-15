@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
+
+	<!-- 회원가입 -->
 	<insert id="register">
 		insert into user_tbl(user_id, user_pw, user_name) 
 		values(#{user_id}, #{user_pw}, #{user_name})
 	</insert>
 	
+	<!-- 로그인 -->
 	<select id="login" resultType="com.example.first.vo.UserVO">
 		select user_id, user_pw from user_tbl where user_id = #{user_id} and user_pw = #{user_pw}
 	</select>
 	
+	<!-- 회원정보수정 -->
 	<update id="user_update">
 		update user_tbl set user_pw = #{user_pw}, user_name = #{user_name}, update_ymd = sysdate 
 		where user_id = #{user_id}
 	</update>
 	
+	<!-- 회원정보 -->
 	<select id="info" resultType="com.example.first.vo.UserVO">
 		select * from user_tbl where user_id = #{user_id}
 	</select>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="user_delete">
+		delete from user_tbl where user_id = #{user_id}
+	</delete>
 </mapper>

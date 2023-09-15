@@ -1,39 +1,16 @@
 package com.example.first.vo;
 
+import java.sql.Date;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class NoticeVO {
-	private String id, title, content, writer;
+	private String title, content, writer;
+	private Date write_date;
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
 	
 	
 }

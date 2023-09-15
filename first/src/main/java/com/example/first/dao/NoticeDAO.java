@@ -16,4 +16,9 @@ public class NoticeDAO {
 		List<NoticeVO> list = sql.selectList("notice.list");
 		return list;
 	}
+	
+	public int insert(NoticeVO vo) {
+		int result = sql.insert("notice.insert", vo);
+		return result;
+	}
 }

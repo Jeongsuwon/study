@@ -89,15 +89,14 @@ button[type="button"] {
         <button id="btn-update">수정하기</button>
 		<button type="button"
 			onclick="history.go(-1)">취소</button>
+
 		</div>
     </form>
     
     <script>
 
 		$('#btn-update').on('click', function() {
-			if (emptyCheck()) {
 				$('form').submit()
-			}
 		})
 	</script>
 

@@ -25,6 +25,8 @@ dependencies {
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	implementation 'javax.servlet:jstl'
 	
+	//lombok
+	implementation 'org.projectlombok:lombok'
 	
 	implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.7.5'
 	//

@@ -4,4 +4,9 @@
 	<select id="list" resultType="com.example.first.vo.NoticeVO">
 		select * from notice_tbl
 	</select>
+	
+	<insert id="insert">
+		INSERT INTO notice_tbl (title, content, writer)
+		VALUES (#{title}, #{content}, (SELECT user_name FROM user_tbl WHERE user_id = #{user_id}));
+	</insert>
 </mapper>

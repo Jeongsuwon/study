@@ -42,19 +42,8 @@ public class UserController {
 		params.put("user_id", user_id);
 		params.put("user_pw", user_pw);
 		
-		boolean match = false;
 		
 		UserVO vo = dao.login(params);
-//		if (vo != null) { // 아이디가 일치하는 회원정보가 있고
-//			match =  passwordEncoder.matches(user_pw, vo.getUser_pw()); // 비번일치여부 확인
-//		}
-//		if (match) {
-//			session.setAttribute("loginInfo", vo);
-////			return "redirect:/";
-//			return "/board";
-//		} else {
-//			return "redirect:login"; // 로그인화면 다시 요청
-//		}
 		
 		if (vo != null) {
 		    // 데이터베이스에서 가져온 비밀번호와 입력한 비밀번호를 직접 비교
@@ -67,6 +56,15 @@ public class UserController {
 		// 비밀번호가 일치하지 않거나 사용자 정보가 없는 경우
 		return "redirect:/";
 
+		
+	}
+	
+	//로그아웃 처리
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("loginInfo");
+		
+		return "redirect:/";
 	}
 	
 	//정보수정 페이지
@@ -77,7 +75,7 @@ public class UserController {
 		return "modify";
 	}
 	
-	//정보 수정시 비밀번호 작성 페이지
+	//정보수정 시 비밀번호 작성 페이지
 	@GetMapping("/modify_check")
 	public String modify_check(){
 		
@@ -85,9 +83,33 @@ public class UserController {
 		return "modify_check";
 	}
 	
+	//회원탈퇴 시 비밀번호 작성 페이지
+	@GetMapping("/delete_check")
+	public String delete_check(){
+		
+		
+		return "delete_check";
+	}
+	
 	//비밀번호 확인 처리
-	@PostMapping("/pw_check")
-	public String pw_check(HttpSession session, Model model,String user_pw) {
+	@PostMapping("/pw_delete_check")
+	public String modify_pw_check(HttpSession session, Model model,String user_pw) {
+		UserVO vo = (UserVO) session.getAttribute("loginInfo");
+		
+		if(vo != null) {
+			if(vo.getUser_pw().equals(user_pw)) {
+				
+				return "redirect:/";
+			}else {
+				 model.addAttribute("error", "비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+			}
+		}
+		return "delete_check";
+	}
+	
+	//비밀번호 확인 처리
+	@PostMapping("/pw_modify_check")
+	public String delete_pw_check(HttpSession session, Model model,String user_pw) {
 		UserVO vo = (UserVO) session.getAttribute("loginInfo");
 		
 		if(vo != null) {
@@ -97,7 +119,7 @@ public class UserController {
 				 model.addAttribute("error", "비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
 			}
 		}
-		return "modify_check";
+		return "pw_modify_check";
 	}
 	
 	
@@ -113,6 +135,18 @@ public class UserController {
 	@PostMapping("/user_update")
 	public String user_update(UserVO vo) {
 		dao.update(vo);
+		return "redirect:/";
+	}
+	
+	//회원탈퇴 처리
+	@PostMapping("/user_delete")
+	public String user_delete(HttpSession session) {
+		UserVO vo = (UserVO) session.getAttribute("loginInfo");
+	    if (vo != null) {
+	        dao.delete(vo);
+	        session.removeAttribute("loginInfo");
+	    }
+		
 		return "redirect:/";
 	}
 	

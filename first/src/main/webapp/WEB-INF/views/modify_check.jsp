@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-<form action="/pw_check" method="post">
+<form action="/pw_modify_check" method="post">
 	<div>
 		<h2>정보수정을 위해 비밀번호를 입력해주세요.</h2>
 	</div>

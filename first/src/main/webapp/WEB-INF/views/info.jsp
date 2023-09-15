@@ -38,7 +38,8 @@
     </div>
     <div>
     	<a href="modify_check"><button type="button">회원수정</button></a>
-    	<a href="modify"><button type="button">회원탈퇴</button></a>
+    	<a href="delete_check"><button type="button">회원탈퇴</button></a>
+    	<a href="notice/list"><button type="button">이전으로</button></a>
     </div>
     </div>
 </body>

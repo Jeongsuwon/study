@@ -31,4 +31,9 @@ public class UserDAO {
 		return sql.selectOne("user.info", user_id);
 	}
 	
+	public int delete(UserVO vo) {
+		int result = sql.delete("user.user_delete", vo);
+		return result;
+	}
+	
 }
