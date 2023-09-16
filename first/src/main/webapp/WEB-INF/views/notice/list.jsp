@@ -89,8 +89,8 @@
                     <tr>
                         <td>${vo.id}</td>
                         <td>${vo.title}</td>
-                        <td>${vo.content}</td>
                         <td>${vo.writer}</td>
+                        <td>${vo.write_date}</td>
                     </tr>
                 </c:forEach>
             </c:otherwise>
