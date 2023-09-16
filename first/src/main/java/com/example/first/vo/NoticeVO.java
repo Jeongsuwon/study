@@ -8,7 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class NoticeVO {
-	private String title, content, writer;
+	private int id;
+	private String title, content, writer, user_id;
 	private Date write_date;
 
 	

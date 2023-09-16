@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.first.dao.NoticeDAO;
 import com.example.first.vo.NoticeVO;
+import com.example.first.vo.UserVO;
 
 
 @Controller @RequestMapping("/notice")
@@ -34,8 +35,10 @@ public class NoticeController {
 	}
 	
 	@PostMapping("/notice_insert")
-	public String notice_insert(NoticeVO vo) {
+	public String notice_insert(NoticeVO vo, HttpSession session) {
+		UserVO user = (UserVO) session.getAttribute("loginInfo");
+	    vo.setUser_id(user.getUser_id());
 		dao.insert(vo);
-		return "redirect:notice/list";
+		return "redirect:list";
 	}
 }

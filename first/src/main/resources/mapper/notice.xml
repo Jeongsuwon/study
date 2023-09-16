@@ -6,7 +6,10 @@
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO notice_tbl (title, content, writer)
-		VALUES (#{title}, #{content}, (SELECT user_name FROM user_tbl WHERE user_id = #{user_id}));
+	INSERT INTO notice_tbl (title, content, writer)
+		SELECT #{title}, #{content}, u.user_name
+		FROM user_tbl u
+	INNER JOIN notice_tbl n ON u.user_id = n.user_id
+	WHERE n.user_id = #{user_id}
 	</insert>
 </mapper>

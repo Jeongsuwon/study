@@ -19,7 +19,6 @@ public class UserController {
 	
 	@Autowired private UserDAO dao;
 	
-	@Autowired private static BCryptPasswordEncoder passwordEncoder; 
 
 	
 	//회원가입 페이지

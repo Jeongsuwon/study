@@ -21,17 +21,10 @@
 					<tr>
 						<td>
 							<div style="width: 100%;">
-								<input type="text" placeholder="글 제목" maxlength="40"
-									style="width: 100%;">
+								<input type="text" name="title" placeholder="글 제목" maxlength="40" style="width: 100%;">
+<textarea class="form-control" name="content" placeholder="글 내용을 작성하세요" maxlength="1024" style="height: 400px;"></textarea>
 							</div>
 						</td>
-					</tr>
-
-					<tr>
-
-						<td><textarea class="form-control" placeholder="글 내용을 작성하세요"
-								maxlength="1024" style="height: 400px;"></textarea></td>
-
 					</tr>
 
 				</tbody>
