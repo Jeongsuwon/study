@@ -41,4 +41,11 @@ public class NoticeController {
 		dao.insert(vo);
 		return "redirect:list";
 	}
+	
+	@GetMapping("/notice_info")
+	public String notice_info(int id, Model model) {
+		model.addAttribute("vo", dao.info(id));
+		return "notice/info";
+	}
+	
 }

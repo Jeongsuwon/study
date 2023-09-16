@@ -21,4 +21,9 @@ public class NoticeDAO {
 		int result = sql.insert("notice.insert", vo);
 		return result;
 	}
+	
+	public NoticeVO info(int id) {
+		
+		return sql.selectOne("notice.info", id);
+	}
 }

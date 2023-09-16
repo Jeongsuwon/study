@@ -9,4 +9,10 @@
 	INSERT INTO notice_tbl (title, content, writer, user_id)
 	VALUES ('test', 'test', (SELECT user_name FROM user_tbl WHERE user_id = #{user_id}), #{user_id})
 	</insert>
+	
+	<select id="info">
+		select n.*, u.user_name
+		from notice_tbl n inner join user_tbl u on n.writer = u.user_id
+		where id = #{id};
+	</select>
 </mapper>
