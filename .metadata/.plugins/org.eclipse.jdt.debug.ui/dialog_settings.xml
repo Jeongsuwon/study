@@ -5,8 +5,8 @@
 	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
 		<item key="WIDTH" value="614"/>
 		<item key="HEIGHT" value="194"/>
-		<item key="SashWeightTree" value="186"/>
-		<item key="SashWeightDetails" value="813"/>
+		<item key="SashWeightTree" value="519"/>
+		<item key="SashWeightDetails" value="480"/>
 	</section>
 	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
 		<item key="ShowStatusLine" value="true"/>

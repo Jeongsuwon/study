@@ -10,9 +10,9 @@
 	VALUES ('test', 'test', (SELECT user_name FROM user_tbl WHERE user_id = #{user_id}), #{user_id})
 	</insert>
 	
-	<select id="info">
-		select n.*, u.user_name
-		from notice_tbl n inner join user_tbl u on n.writer = u.user_id
-		where id = #{id};
+	<select id="info" resultType="com.example.first.vo.NoticeVO">
+		select n.*
+		from notice_tbl n inner join user_tbl u on n.user_id = u.user_id
+		where id = #{id}
 	</select>
 </mapper>

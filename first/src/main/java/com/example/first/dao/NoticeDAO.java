@@ -22,7 +22,7 @@ public class NoticeDAO {
 		return result;
 	}
 	
-	public NoticeVO info(int id) {
+	public NoticeVO info(Integer id) {
 		
 		return sql.selectOne("notice.info", id);
 	}

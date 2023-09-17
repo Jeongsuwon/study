@@ -20,8 +20,8 @@
     <tr>
       <th>제목</th>
       <td colspan="2" class="td-center">${vo.title}</td>
-      <th>작성자</th>
-      <td class="td-center">${vo.user_name}</td>
+<%--       <th>작성자</th>
+      <td class="td-center">${vo.user_name}</td> --%>
       <th>작성일자</th>
       <td class="td-center">${vo.write_date}</td>
     </tr>

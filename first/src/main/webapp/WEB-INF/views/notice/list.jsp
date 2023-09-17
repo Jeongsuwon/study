@@ -88,8 +88,7 @@
                 <c:forEach items="${list}" var="vo">
                     <tr>
                         <td>${vo.id}</td>
-                        <td><a href="info">${vo.title }</a></td>
-                        <td>${vo.title}</td>
+                        <td><a href="notice_info?id=${vo.id }">${vo.title }</a></td>
                         <td>${vo.writer}</td>
                         <td>${vo.write_date}</td>
                     </tr>
