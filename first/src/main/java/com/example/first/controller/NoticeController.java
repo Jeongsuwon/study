@@ -48,4 +48,16 @@ public class NoticeController {
 		return "notice/info";
 	}
 	
+	@GetMapping("/modify")
+	public String notice_modify() {
+		
+		return "notice/modify";
+	}
+	
+	@GetMapping("/delete")
+	public String notice_delete() {
+		
+		return "notice/delete";
+	}
+	
 }

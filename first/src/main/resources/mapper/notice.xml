@@ -6,13 +6,14 @@
 	</select>
 	
 	<insert id="insert">
-	INSERT INTO notice_tbl (title, content, writer, user_id)
-	VALUES ('test', 'test', (SELECT user_name FROM user_tbl WHERE user_id = #{user_id}), #{user_id})
+		INSERT INTO notice_tbl (title, content, writer, user_id)
+		VALUES ('test', 'test', (SELECT user_name FROM user_tbl WHERE user_id = #{user_id}), #{user_id})
 	</insert>
 	
 	<select id="info" resultType="com.example.first.vo.NoticeVO">
-		select n.*
-		from notice_tbl n inner join user_tbl u on n.user_id = u.user_id
-		where id = #{id}
+		SELECT n.*
+		FROM notice_tbl n
+		INNER JOIN user_tbl u ON n.user_id = u.user_id
+		WHERE id = #{id}
 	</select>
 </mapper>

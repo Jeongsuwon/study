@@ -57,7 +57,12 @@
     	.tb-container{
     		text-align: center;
         	margin-top: 20px;
-
+		
+		}
+		
+		.buttons > a{
+			text-align: right;
+			}
     </style>
 
 <body>
@@ -97,7 +102,7 @@
         </c:choose>
     </tbody>
 </table>
-<div>
+<div class="buttons">
 	<a href="new"><button type="button">공지사항 작성</button></a>
 </div>
 </body>
