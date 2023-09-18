@@ -78,21 +78,24 @@
     </tr>
   </table>
   
-<%--   <c:choose> --%>
-<%--     <c:when test="${loginId eq vo.user_id}"> --%>
-<!--             <div class="buttons"> -->
-<%--                 <a href="modify?id=${vo.id}">수정</a> --%>
-<!--                 <a href="list">목록으로</a> -->
-<%--                 <a href="javascript:if(confirm('이 FAQ 글을 삭제하시겠습니까?')) --%>
-<%--                 											 {location='faq_delete?faq_no=${vo.faq_no }'}">FAQ 삭제</a> --%>
-<!--             </div> -->
-<%--     </c:when> --%>
-<%--         <c:otherwise> --%>
-<!--             <div class="buttons"> -->
-<!--                 <a href="list">FAQ 목록</a> -->
-<!--             </div> -->
-<%--         </c:otherwise> --%>
-<%-- </c:choose> --%>
+  <c:choose>
+    <c:when test="${loginId eq vo.user_id}">
+    		<script>
+            console.log("vo.user_id: " + ${vo.user_id});
+        </script>
+            <div class="buttons">
+                <a href="modify?id=${vo.id}">수정</a>
+                <a href="list">목록으로</a>
+                <a href="javascript:if(confirm('이 FAQ 글을 삭제하시겠습니까?'))
+                											 {location='faq_delete?faq_no=${vo.faq_no }'}">FAQ 삭제</a>
+            </div>
+    </c:when>
+        <c:otherwise>
+            <div class="buttons">
+                <a href="list">FAQ 목록</a>
+            </div>
+        </c:otherwise>
+</c:choose>
   
   <div class="buttons">
   	<a href="list"><button>목록으로</button></a>

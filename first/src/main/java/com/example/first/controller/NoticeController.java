@@ -43,7 +43,9 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/notice_info")
-	public String notice_info(Integer id, Model model, HttpSession session) {
+	public String notice_info(Integer id, Model model, HttpSession session, NoticeVO vo) {
+		UserVO user = (UserVO) session.getAttribute("loginInfo");
+	    vo.setUser_id(user.getUser_id());
 		model.addAttribute("vo", dao.info(id));
 		return "notice/info";
 	}
