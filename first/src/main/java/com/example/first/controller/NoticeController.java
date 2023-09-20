@@ -54,6 +54,7 @@ public class NoticeController {
 	public String notice_modify(Model model, Integer id, HttpSession session, NoticeVO vo) {
 		UserVO user = (UserVO) session.getAttribute("loginInfo");
 	    vo.setUser_id(user.getUser_id());
+	    System.out.println("ID 파라미터 값: " + id);
 		model.addAttribute("vo", dao.info(id));
 		return "notice/modify";
 	}
