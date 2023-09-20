@@ -54,7 +54,8 @@
 </head>
 <body>
 <h1>Study CRUD</h1>
-	 <table>
+	<form method="post" action="/update_notice">
+  <table>
     <colgroup>
       <col width="90px">
       <col width="380px">
@@ -66,7 +67,7 @@
     </colgroup>
     <tr>
       <th>제목</th>
-      <td colspan="2" class="td-center">${vo.title}</td>
+      <td colspan="2" class="td-center"><input type="text" name="title" value="${vo.title}" /></td>
       <th>작성자</th>
       <td class="td-center">${vo.writer}</td>
       <th>작성일자</th>
@@ -74,30 +75,17 @@
     </tr>
     <tr>
       <th>내용</th>
-      <td class="td-margin content-line-height" colspan="6"><pre>${vo.content}</pre></td>
+      <td class="td-margin content-line-height" colspan="6">
+        <textarea name="content" rows="10" cols="50">${vo.content}</textarea>
+      </td>
     </tr>
   </table>
+</form>
   
-  <c:choose>
-    <c:when test="${loginId eq vo.user_id}">
-            <div class="buttons">
-                <a href="modify?id=${vo.id}">수정</a>
-                <a href="list">목록으로</a>
-                <a href="javascript:if(confirm('이 FAQ 글을 삭제하시겠습니까?'))
-                											 {location='faq_delete?faq_no=${vo.faq_no }'}">FAQ 삭제</a>
-            </div>
-    </c:when>
-        <c:otherwise>
-            <div class="buttons">
-                <a href="list">FAQ 목록</a>
-            </div>
-        </c:otherwise>
-</c:choose>
   
   <div class="buttons">
-  	<a href="list"><button>목록으로</button></a>
   	<a href="modify"><button>수정</button></a>
-  	<a href="delete"><button>삭제</button></a>
+  	<a href="notice_info?id=${vo.id }"><button>취소</button></a>
   	</div>
 </body>
 </html>
