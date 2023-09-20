@@ -80,9 +80,6 @@
   
   <c:choose>
     <c:when test="${loginId eq vo.user_id}">
-    		<script>
-            console.log("vo.user_id: " + ${vo.user_id});
-        </script>
             <div class="buttons">
                 <a href="modify?id=${vo.id}">수정</a>
                 <a href="list">목록으로</a>

@@ -16,4 +16,8 @@
 		INNER JOIN user_tbl u ON n.user_id = u.user_id
 		WHERE id = #{id}
 	</select>
+	
+	<update id="update">
+		update notice_tbl set title = #{title}, content = #{content} where id = #{id}
+	</update>
 </mapper>

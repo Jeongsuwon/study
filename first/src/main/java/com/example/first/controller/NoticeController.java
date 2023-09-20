@@ -51,8 +51,10 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/modify")
-	public String notice_modify() {
-		
+	public String notice_modify(Model model, Integer id, HttpSession session, NoticeVO vo) {
+		UserVO user = (UserVO) session.getAttribute("loginInfo");
+	    vo.setUser_id(user.getUser_id());
+		model.addAttribute("vo", dao.info(id));
 		return "notice/modify";
 	}
 	
