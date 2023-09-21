@@ -20,4 +20,8 @@
 	<update id="update">
 		update notice_tbl set title = #{title}, content = #{content} where id = #{id}
 	</update>
+	
+	<delete id="delete">
+		delete from notice_tbl where id = #{id}
+	</delete>
 </mapper>

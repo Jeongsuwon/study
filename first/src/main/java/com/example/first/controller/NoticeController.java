@@ -79,9 +79,12 @@ public class NoticeController {
 	
 	//게시글 삭제처리
 	@GetMapping("/notice_delete")
-	public String notice_delete() {
-		
-		return "notice/delete";
+	public String notice_delete(NoticeVO vo, HttpSession session, Integer id) {
+		UserVO user = (UserVO) session.getAttribute("loginInfo");
+		 vo.setUser_id(user.getUser_id());
+		 System.out.println("ID 파라미터 값:" + id);
+		dao.delete(vo);
+		return "redirect:list";
 	}
 	
 }

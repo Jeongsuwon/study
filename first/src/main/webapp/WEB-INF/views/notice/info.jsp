@@ -88,8 +88,23 @@
     </c:if>
     
     <c:if test="${sessionScope.loginInfo.user_id == vo.user_id}">
-        <a href="delete"><button>삭제</button></a>
+        <a href="javascript:;" onclick="confirmDelete(${vo.id})"><button>삭제</button></a>
     </c:if>
 </div>
+
+	<script>
+    function confirmDelete(id) {
+        var confirmation = confirm("정말로 삭제하시겠습니까?");
+        
+        if (confirmation) {
+            // 확인을 누르면 삭제 요청을 보낼 수 있도록 URL을 생성하고 이동
+            var deleteUrl = "delete?id=" + id;
+            window.location.href = deleteUrl;
+        } else {
+            // 취소를 누르면 아무 작업도 수행하지 않음
+            return false;
+        }
+    }
+</script>
 </body>
 </html>

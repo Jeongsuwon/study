@@ -88,8 +88,6 @@
   	<a href="notice_info?id=${vo.id }"><button>취소</button></a>
   	</div>
 </form>
-  
-  
 
 </body>
 </html>
