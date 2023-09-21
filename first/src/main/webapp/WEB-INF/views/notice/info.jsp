@@ -77,27 +77,19 @@
       <td class="td-margin content-line-height" colspan="6"><pre>${vo.content}</pre></td>
     </tr>
   </table>
-  
-<%--   <c:choose> --%>
-<%--     <c:when test="${loginId eq vo.user_id}"> --%>
-<!--             <div class="buttons"> -->
-<%--                 <a href="modify?id=${vo.id}">수정</a> --%>
-<!--                 <a href="list">목록으로</a> -->
-<%--                 <a href="javascript:if(confirm('이 FAQ 글을 삭제하시겠습니까?')) --%>
-<%--                 											 {location='faq_delete?faq_no=${vo.faq_no }'}">FAQ 삭제</a> --%>
-<!--             </div> -->
-<%--     </c:when> --%>
-<%--         <c:otherwise> --%>
-<!--             <div class="buttons"> -->
-<!--                 <a href="list">FAQ 목록</a> -->
-<!--             </div> -->
-<%--         </c:otherwise> --%>
-<%-- </c:choose> --%>
+
   
   <div class="buttons">
-  	<a href="list"><button>목록으로</button></a>
-  	<a href="modify?id=${vo.id }"><button>수정</button></a>
-  	<a href="delete"><button>삭제</button></a>
-  	</div>
+    <a href="list"><button>목록으로</button></a>
+    
+	<!-- sessionScope -> HttpSession에 등록된 데이터의 이름과 값을 저장하고 있는 map객체 -->
+    <c:if test="${sessionScope.loginInfo.user_id == vo.user_id}">
+        <a href="modify?id=${vo.id }"><button>수정</button></a>
+    </c:if>
+    
+    <c:if test="${sessionScope.loginInfo.user_id == vo.user_id}">
+        <a href="delete"><button>삭제</button></a>
+    </c:if>
+</div>
 </body>
 </html>
