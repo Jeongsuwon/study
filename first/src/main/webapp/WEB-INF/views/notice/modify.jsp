@@ -54,7 +54,7 @@
 </head>
 <body>
 <h1>Study CRUD</h1>
-	<form method="post" action="/update_notice">
+	<form method="post" action="/notice/notice_update?id=${vo.id }">
   <table>
     <colgroup>
       <col width="90px">
@@ -65,9 +65,11 @@
       <col width="100px">
       <col width="150px">
     </colgroup>
+    
+    
     <tr>
       <th>제목</th>
-      <td colspan="2" class="td-center"><input type="text" name="title" value="${vo.title}" /></td>
+      <td colspan="2"><input type="text" name="title" value="${vo.title}" /></td>
       <th>작성자</th>
       <td class="td-center">${vo.writer}</td>
       <th>작성일자</th>
@@ -80,12 +82,14 @@
       </td>
     </tr>
   </table>
+  
+    <div class="buttons">
+  	<button type="submit">수정</button>
+  	<a href="notice_info?id=${vo.id }"><button>취소</button></a>
+  	</div>
 </form>
   
   
-  <div class="buttons">
-  	<a href="modify"><button>수정</button></a>
-  	<a href="notice_info?id=${vo.id }"><button>취소</button></a>
-  	</div>
+
 </body>
 </html>

@@ -26,4 +26,9 @@ public class NoticeDAO {
 		
 		return sql.selectOne("notice.info", id);
 	}
+	
+	public int update(NoticeVO vo) {
+		int result = sql.update("notice.update", vo);
+		return result;
+	}
 }
