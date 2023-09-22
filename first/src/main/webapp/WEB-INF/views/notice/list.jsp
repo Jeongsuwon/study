@@ -68,10 +68,14 @@
 <body>
    <div class="header">
         <h1>Study CRUD</h1>
+        <div class="user-info">
+<%--         <span>${sessionScope.loginInfo.user_name}</span> --%>
+		<span>로그인했습니다.</span>
         <div class="buttons">
             <a href="/info"><button type="button">나의 정보</button></a>
             <a href="/logout"><button type="button">로그아웃</button></a>
         </div>
+    </div>
     </div>
 <table class="tb-container">
     <thead>
@@ -102,8 +106,8 @@
         </c:choose>
     </tbody>
 </table>
-<div class="buttons">
-	<a href="new"><button type="button">공지사항 작성</button></a>
+<div class="buttons" style="display: flex; justify-content: center; align-items: center; margin-top: 20px">
+    <a href="new"><button type="button">공지사항 작성</button></a>
 </div>
 </body>
 </html>

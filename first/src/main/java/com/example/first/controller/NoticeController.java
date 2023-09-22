@@ -23,7 +23,9 @@ public class NoticeController {
 	
 	//게시글 목록화면
 	@GetMapping("/list")
-	public String list(Model model, HttpSession session) {
+	public String list(Model model, HttpSession session, NoticeVO vo) {
+		UserVO user = (UserVO) session.getAttribute("loginInfo");
+	    vo.setUser_id(user.getUser_id());
 	List<NoticeVO> list = dao.list();
 	model.addAttribute("list", list);
 
