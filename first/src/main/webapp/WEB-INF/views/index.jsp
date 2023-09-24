@@ -54,7 +54,9 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-</style>		
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>		
 </head>
 <body>
 <div>	
@@ -64,11 +66,31 @@ button:hover {
 					name="user_id">
 				<label for="user_pw">비밀번호</label> <input type="password"
 					id="user_pw" name="user_pw">
-			<button type="submit">로그인</button>
+			<button id="login" type="submit">로그인</button>
 			
 		</form>
 		<a href="join">회원가입</a>
 		
 	</div>
+	
+	<script>
+	$('#login').click(function() {
+		
+		
+	    var userId = $('#user_id').val();
+	    var userPw = $('#user_pw').val();
+	
+	    if (userId.trim() === "") {
+	        alert("아이디를 입력해주세요.");
+	        return;
+	    }
+	
+	    if (userPw.trim() === "") {
+	        alert("비밀번호를 입력해주세요.");
+	        return;
+	    }
+	
+	});
+</script>
 </body>
 </html>
