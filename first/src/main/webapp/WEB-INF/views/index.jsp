@@ -80,14 +80,17 @@ button:hover {
 	    var userId = $('#user_id').val();
 	    var userPw = $('#user_pw').val();
 	
-	    if (userId.trim() === "") {
+	    if (userId.trim() == "") {
 	        alert("아이디를 입력해주세요.");
-	        return;
+	        $('#user_id').focus();
+	        return false;
 	    }
 	
-	    if (userPw.trim() === "") {
+	    if (userPw.trim() == "") {
 	        alert("비밀번호를 입력해주세요.");
-	        return;
+	        $('#user_pw').focus();
+	        event.preventDefault();
+	        return false;
 	    }
 	
 	});

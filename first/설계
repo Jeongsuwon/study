@@ -1,0 +1,17 @@
+#프로젝트 설정/DB
+ 1. Oracle DB 사용
+   
+
+#Application.properties 사용
+
+#CRUD 구성
+ 1. Member
+  -로그인
+  -회원가입
+  
+ 2. Notice  
+  -공지사항 작성/목록/수정/삭제
+ 
+ 3. Store
+  -Item 추가/정보/수정/삭제
+  
