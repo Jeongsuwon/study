@@ -17,9 +17,15 @@ import com.example.first.vo.UserVO;
 @Controller
 public class UserController {
 	
+	
 	@Autowired private UserDAO dao;
 	
 
+	//로그인 페이지
+	@GetMapping("/sign-in")
+	public String sign-in(){
+		return "login"
+	}
 	
 	//회원가입 페이지
 	@GetMapping("/join")

@@ -35,12 +35,12 @@
                             </ul>
                         </li>
                     </ul>
-<form action="login.jsp" method="post">
-    <button id="login" class="btn btn-outline-dark me-4"  type="submit">로그인
+    
+    <a href="login" class="btn btn-outline-dark me-4">로그인
     <i class="bi-cart-fill me-1"></i>
-    </button>
+    </a>
+<!--     </button> -->
         
-</form>
 <button class="btn btn-outline-dark" type="submit">
     <i class="bi-cart-fill me-1"></i>
     Cart
