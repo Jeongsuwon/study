@@ -22,9 +22,9 @@ public class UserController {
 	
 
 	//로그인 페이지
-	@GetMapping("/sign-in")
-	public String sign-in(){
-		return "login"
+	@GetMapping("/sign_in")
+	public String sign_in(){
+		return "sign_in";
 	}
 	
 	//회원가입 페이지
@@ -55,7 +55,8 @@ public class UserController {
 		    if (vo.getUser_pw().equals(user_pw)) {
 		        // 비밀번호가 일치하는 경우
 		        session.setAttribute("loginInfo", vo);
-		        return "redirect:/notice/list";
+		        return "redirect:/";
+
 		    }
 		}
 		// 비밀번호가 일치하지 않거나 사용자 정보가 없는 경우
@@ -87,6 +88,7 @@ public class UserController {
 		
 		return "modify_check";
 	}
+	
 	
 	//회원탈퇴 시 비밀번호 작성 페이지
 	@GetMapping("/delete_check")
@@ -153,6 +155,12 @@ public class UserController {
 	    }
 		
 		return "redirect:/";
+	}
+	
+	//게시판 페이지
+	@GetMapping("/notice")
+	public String noticeList() {
+        return "redirect:/notice/list";
 	}
 	
 	

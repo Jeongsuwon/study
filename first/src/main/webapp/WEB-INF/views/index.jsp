@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,7 +24,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="notice">Notice</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -36,11 +37,21 @@
                         </li>
                     </ul>
     
-    <a href="login" class="btn btn-outline-dark me-4">로그인
-    <i class="bi-cart-fill me-1"></i>
-    </a>
-<!--     </button> -->
-        
+<c:choose>
+    <c:when test="${empty sessionScope.loginInfo}">
+        <a href="sign_in" class="btn btn-outline-dark me-4">
+            로그인
+            <i class="bi-cart-fill me-1"></i>
+        </a>
+    </c:when>
+    <c:otherwise>
+        <a href="#" class="btn btn-outline-dark me-4" onclick="confirmLogout()">
+            로그아웃
+            <i class="bi-cart-fill me-1"></i>
+        </a>
+    </c:otherwise>
+</c:choose>
+
 <button class="btn btn-outline-dark" type="submit">
     <i class="bi-cart-fill me-1"></i>
     Cart
@@ -269,7 +280,15 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        
+        <script>
+    function confirmLogout() {
+        var result = confirm("로그아웃 하시겠습니까?");
+        if (result) {
+            // 여기에 로그아웃 처리를 위한 코드를 추가하세요.
+            window.location.href = "logout"; // 로그아웃을 처리하는 컨트롤러 매핑 경로로 변경하세요.
+        }
+    }
+</script>
         
     </body>
 </html>
