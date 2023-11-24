@@ -63,6 +63,7 @@
 		.buttons > a{
 			text-align: right;
 			}
+			
     </style>
 
 <body>
@@ -78,17 +79,16 @@
         </div>
     </div>
     </div>
-    <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
-                </div>
-            </div>
+<div class="border-end bg-white d-flex" id="sidebar-wrapper">
+    <div class="list-group list-group-flush flex-column">
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">공지사항</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"></a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">자유게시판</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">이벤트</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">리뷰</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+    </div>
+</div>
 <table class="tb-container">
     <thead>
         <tr>
