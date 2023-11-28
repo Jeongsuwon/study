@@ -63,7 +63,69 @@
 		.buttons > a{
 			text-align: right;
 			}
-			
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.buttons button {
+    margin-left: auto;
+}
+
+#sidebar-wrapper {
+    margin-top: 20px;
+}
+
+#sidebar-wrapper .list-group .list-group-item {
+    text-align: left;
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+    color: #000; /* 텍스트 색상 */
+    text-decoration: none; /* 밑줄 없애기 */
+}
+
+#sidebar-wrapper .list-group {
+    flex-direction: column; /* 세로로 나열되도록 설정 */
+}
+
+#sidebar-wrapper .list-group .list-group-item:hover {
+    background-color: #f8f9fa; /* 호버 시 배경 색상 */
+    text-decoration: none; /* 밑줄 없애기 */
+}
+
+#sidebar-wrapper .list-group .active {
+    background-color: #007bff; /* 선택된 항목 배경 색상 */
+    color: #fff; /* 선택된 항목 텍스트 색상 */
+    text-decoration: none; /* 밑줄 없애기 */
+}
+
+.tb-container {
+    text-align: center;
+    margin-top: 20px;
+    width: 70%;
+}
     </style>
 
 <body>
@@ -82,7 +144,6 @@
 <div class="border-end bg-white d-flex" id="sidebar-wrapper">
     <div class="list-group list-group-flush flex-column">
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">공지사항</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"></a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">자유게시판</a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">이벤트</a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">리뷰</a>
