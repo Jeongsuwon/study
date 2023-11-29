@@ -18,6 +18,12 @@ public class NoticeDAO {
 		return list;
 	}
 	
+	//자유게시판 목록
+		public List<NoticeVO> freedom(){
+			List<NoticeVO> freedom = sql.selectList("notice.freedom");
+			return freedom;
+		}
+	
 	//공지사항 추가
 	public int insert(NoticeVO vo) {
 		int result = sql.insert("notice.insert", vo);

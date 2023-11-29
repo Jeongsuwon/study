@@ -32,6 +32,17 @@ public class NoticeController {
 		return "notice/list";
 	}
 	
+	//자유게시판 목록화면
+	@GetMapping("/freedom")
+	public String freedom(Model model, HttpSession session, NoticeVO vo) {
+		UserVO user = (UserVO) session.getAttribute("loginInfo");
+	    vo.setUser_id(user.getUser_id());
+	List<NoticeVO> freedom = dao.freedom();
+	model.addAttribute("freedom", freedom);
+
+		return "notice/freedom";
+	}
+	
 	//게시글 추가화면 요청
 	@GetMapping("/new")
 	public String new_notice() {

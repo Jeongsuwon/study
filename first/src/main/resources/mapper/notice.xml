@@ -24,4 +24,9 @@
 	<delete id="delete">
 		delete from notice_tbl where id = #{id}
 	</delete>
+	
+	
+	<select id="freedom" resultType="com.example.first.vo.NoticeVO">
+		select * from notice_tbl
+	</select>
 </mapper>

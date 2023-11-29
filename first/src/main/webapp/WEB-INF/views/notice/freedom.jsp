@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판>공지사항</title>
+<title>게시판>자유게시판</title>
 </head>
     <style>
     	.header {
@@ -163,7 +163,7 @@ body {
         <c:choose>
             <c:when test="${empty list}">
                 <tr>
-                    <td colspan="4" class="noList">현재 공지글이 없습니다.</td>
+                    <td colspan="4" class="noList">현재 자유게시판 글이 없습니다.</td>
                 </tr>
             </c:when>
             <c:otherwise>
