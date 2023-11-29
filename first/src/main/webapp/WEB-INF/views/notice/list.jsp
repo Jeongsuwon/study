@@ -145,7 +145,7 @@ body {
     <div class="list-group list-group-flush flex-column">
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="list">공지사항</a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="freedom">자유게시판</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">이벤트</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="event">이벤트</a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">리뷰</a>
         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
     </div>

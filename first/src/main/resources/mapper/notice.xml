@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notice">
+	
+	<!-- 공지사항 목록 -->
 	<select id="list" resultType="com.example.first.vo.NoticeVO">
 		select * from notice_tbl
 	</select>
 	
+	<!-- 공지사항 추가 -->
 	<insert id="insert">
 		INSERT INTO notice_tbl (title, content, writer, user_id)
 		VALUES ('test', 'test', (SELECT user_name FROM user_tbl WHERE user_id = #{user_id}), #{user_id})
 	</insert>
 	
+	
+	<!-- 공지사항 정보 -->
 	<select id="info" resultType="com.example.first.vo.NoticeVO">
 		SELECT n.*
 		FROM notice_tbl n
@@ -17,16 +22,24 @@
 		WHERE id = #{id}
 	</select>
 	
+	<!-- 공지사항 수정 -->
 	<update id="update">
 		update notice_tbl set title = #{title}, content = #{content} where id = #{id}
 	</update>
 	
+	
+	<!-- 공지사항 삭제 -->
 	<delete id="delete">
 		delete from notice_tbl where id = #{id}
 	</delete>
 	
-	
+	<!-- 자유게시판 목록 -->
 	<select id="freedom" resultType="com.example.first.vo.NoticeVO">
+		select * from notice_tbl
+	</select>
+	
+	<!-- 이벤트 목록 -->
+	<select id="event" resultType="com.example.first.vo.NoticeVO">
 		select * from notice_tbl
 	</select>
 </mapper>

@@ -19,10 +19,16 @@ public class NoticeDAO {
 	}
 	
 	//자유게시판 목록
-		public List<NoticeVO> freedom(){
-			List<NoticeVO> freedom = sql.selectList("notice.freedom");
-			return freedom;
-		}
+	public List<NoticeVO> freedom(){
+		List<NoticeVO> freedom = sql.selectList("notice.freedom");
+		return freedom;
+	}
+		
+	//이벤트 목록
+	public List<NoticeVO> event(){
+		List<NoticeVO> event = sql.selectList("notice.event");
+		return event;
+	}
 	
 	//공지사항 추가
 	public int insert(NoticeVO vo) {

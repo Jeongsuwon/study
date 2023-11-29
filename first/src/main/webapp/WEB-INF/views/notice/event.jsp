@@ -151,19 +151,11 @@ body {
     </div>
 </div>
 <table class="tb-container">
-    <thead>
-        <tr>
-            <th style="width: 10%;">글번호</th>
-            <th style="width: 40%;">제목</th>
-            <th style="width: 10%;">작성자</th>
-            <th style="width: 10%;">작성일자</th>
-        </tr>
-    </thead>
     <tbody>
         <c:choose>
             <c:when test="${empty list}">
                 <tr>
-                    <td colspan="4" class="noList">현재 자유게시판 글이 없습니다.</td>
+                    <td colspan="4" class="noList">현재 진행중인 이벤트가 없습니다.</td>
                 </tr>
             </c:when>
             <c:otherwise>
