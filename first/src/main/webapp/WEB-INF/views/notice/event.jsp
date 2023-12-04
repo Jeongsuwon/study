@@ -161,7 +161,9 @@ body {
             <c:otherwise>
                 <c:forEach items="${list}" var="vo">
                     <tr>
-                        <td>${vo.id}</td>
+                        <!-- 이미지 표시를 위한 td -->
+                        <td><img src="${vo.imageUrl}" alt="이미지" style="width: 100px; height: 100px;"></td>
+                        <!-- 타이틀 표시를 위한 td -->
                         <td><a href="notice_info?id=${vo.id }">${vo.title }</a></td>
                         <td>${vo.writer}</td>
                         <td>${vo.write_date}</td>
