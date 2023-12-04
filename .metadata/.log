@@ -9146,3 +9146,66 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2023-12-04 15:12:34.311
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:44.101
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:44.102
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@1b54415f[org.springframework.tooling.boot.ls:1.32.0.202203131529(id=801)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:44.157
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:44.242
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:52.391
+!MESSAGE Boot LS startup time from start to initialized: 8226ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.286
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.nSGwUJotisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.323
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.329
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.330
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.331
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.nSGwUJot => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.331
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.392
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.404
+!MESSAGE buffering callback sts4.classpath.nSGwUJot first false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.405
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.429
+!MESSAGE classpath=33 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.436
+!MESSAGE buffering callback sts4.classpath.nSGwUJot crud_first false 33
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.437
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.438
+!MESSAGE classpath=4 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.447
+!MESSAGE buffering callback sts4.classpath.nSGwUJot project false 3
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:53.449
+!MESSAGE executing callback sts4.classpath.nSGwUJot 3 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-12-04 15:24:54.233
+!MESSAGE executing callback sts4.classpath.nSGwUJot SUCCESS [done]

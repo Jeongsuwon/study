@@ -40,29 +40,29 @@ public class UserController {
 		dao.register(vo);
 		return "redirect:/";
 	}
+	
 	//로그인 처리
 	@PostMapping("/login")
 	public String login(HttpSession session, String user_id, String user_pw) {
-		HashMap<String, Object> params = new HashMap<>();
-		params.put("user_id", user_id);
-		params.put("user_pw", user_pw);
-		
-		
-		UserVO vo = dao.login(params);
-		
-		if (vo != null) {
-		    // 데이터베이스에서 가져온 비밀번호와 입력한 비밀번호를 직접 비교
-		    if (vo.getUser_pw().equals(user_pw)) {
-		        // 비밀번호가 일치하는 경우
-		        session.setAttribute("loginInfo", vo);
-		        return "redirect:/";
+	    HashMap<String, Object> params = new HashMap<>();
+	    params.put("user_id", user_id);
+	    params.put("user_pw", user_pw);
 
-		    }
-		}
-		// 비밀번호가 일치하지 않거나 사용자 정보가 없는 경우
-		return "redirect:/";
+	    UserVO vo = dao.login(params);
 
-		
+	    if (vo != null) {
+	        // 데이터베이스에서 가져온 비밀번호와 입력한 비밀번호를 직접 비교
+	        if (vo.getUser_pw().equals(user_pw)) {
+	            // 비밀번호가 일치하는 경우
+	            // 비밀번호를 제외한 사용자 정보만을 세션에 저장
+	            vo.setUser_pw(null);
+	            session.setAttribute("loginInfo", vo);
+	            return "redirect:/";
+	        }
+	    }
+
+	    // 비밀번호가 일치하지 않거나 사용자 정보가 없는 경우
+	    return "redirect:/";
 	}
 	
 	//로그아웃 처리

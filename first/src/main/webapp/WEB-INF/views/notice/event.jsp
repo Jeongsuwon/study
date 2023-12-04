@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판>자유게시판</title>
+<title>게시판>이벤트</title>
 </head>
     <style>
     	.header {
