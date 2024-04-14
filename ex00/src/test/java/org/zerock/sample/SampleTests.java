@@ -2,6 +2,7 @@ package org.zerock.sample;
 
 import static org.junit.Assert.assertNotNull;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import lombok.extern.log4j.Log4j;
 public class SampleTests {
 	@Setter(onMethod_ = {@Autowired})
 	private Restaurant restaurant;
-
+	
 	
 	@Test
 	public void testExist() {
@@ -29,6 +30,7 @@ public class SampleTests {
 		log.info("----------------------");
 		log.info(restaurant.getChef());
 	}
+	
 	
 }
 
