@@ -37,13 +37,13 @@
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-jdbc</artifactId>
-		    <version>6.1.4</version>
+		    <version>5.0.7.RELEASE</version>
 		</dependency>
 				<!-- spring-tx -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-tx</artifactId>
-		    <version>6.1.4</version>
+		    <version>5.0.7.RELEASE</version>
 		</dependency>
 		
 				<!-- mybatis -->

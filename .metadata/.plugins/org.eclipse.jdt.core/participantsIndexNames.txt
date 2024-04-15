@@ -9,3 +9,5 @@ D:\WorkSpace\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3022601
 \crud_first\src\main\java
 D:\WorkSpace\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3178133098.index
 \ex00\src\main\java
+D:\WorkSpace\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2694948808.index
+\ex02\src\main\java
