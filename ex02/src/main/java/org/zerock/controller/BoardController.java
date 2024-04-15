@@ -66,4 +66,5 @@ public class BoardController {
 	public void register() {
 
 	}
+
 }
