@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Mon Apr 15 16:15:49 KST 2024
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\tndnj\\.m2\\repository\\org\\springframework\\spring-web\\5.3.24\\spring-web-5.3.24.jar=WEB-INF/lib/spring-web-5.3.24.jar
