@@ -10,23 +10,23 @@
 	<context:component-scan base-package="org.zerock.sample">
 	</context:component-scan>
 	
-	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-		<property name="driverName"
-			value="oracle.jdbc.driver.OracleDriver"
-		></property>
-		<property name="jdbcUrl"
-			value="jdbc:oracle:thin:@localhost:1521:XE"
-		></property>
-		<property name="username" value="c##book_ex"></property>
-		<property name="username" value="book_ex"></property>
-	</bean>
+<!-- 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig"> -->
+<!-- 		<property name="driverName" -->
+<!-- 			value="oracle.jdbc.driver.OracleDriver" -->
+<!-- 		></property> -->
+<!-- 		<property name="jdbcUrl" -->
+<!-- 			value="jdbc:oracle:thin:@localhost:1521:XE" -->
+<!-- 		></property> -->
+<!-- 		<property name="username" value="c##book_ex"></property> -->
+<!-- 		<property name="username" value="book_ex"></property> -->
+<!-- 	</bean> -->
 	
 <!-- HikariCP configuration -->
 	
-	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
-		destroy-method="close">
-		<constructor-arg ref="hikariConfig"></constructor-arg>
-	</bean>
+<!-- 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" -->
+<!-- 		destroy-method="close"> -->
+<!-- 		<constructor-arg ref="hikariConfig"></constructor-arg> -->
+<!-- 	</bean> -->
 	
 	<context:component-scan base-package="org.zerock.sample"></context:component-scan>
 	
