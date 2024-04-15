@@ -27,12 +27,12 @@
                         		<div class="form-group">
                         			<label>Title</label>
                         			<input class="form-control" name='title'
-                        			value='<c:out value="${board.title }"/>' readonly="readonly">
+                        			value='<c:out value="${board.title }"/>'>
                         		</div>
                         		<div class="form-group">
                         			<label>Content</label>
                         			<input class="form-control" name='content'
-                        			value='<c:out value="${board.content }"/>' readonly="readonly">
+                        			value='<c:out value="${board.content }"/>'>
                         		</div>
                         		<div class="form-group">
                         			<label>Writer</label>
@@ -65,9 +65,8 @@
 			if(operation === 'remove') {
 				formObj.attr("action", "/board/remove");
 			} else if(operation==='list') {
-				//move to list
-				self.location="/board/list";
-				return;
+				formObj.attr("action","/board/list").attr("method","get");
+				formObj.empty();
 			}
 			formObj.submit();
 		});
