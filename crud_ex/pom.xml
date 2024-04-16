@@ -101,7 +101,12 @@
 			<version>5.3.24</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!-- 암호화를 위한 라이브러리 -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.7.5</version>
+		</dependency>
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
