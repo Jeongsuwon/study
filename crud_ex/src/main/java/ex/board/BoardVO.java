@@ -1,5 +1,7 @@
 package ex.board;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,5 +9,6 @@ import lombok.Setter;
 @Setter
 public class BoardVO {
 	private int bno;
-	private String title, content;
+	private String title, content, writer;
+	private Date updateDate, regDate;
 }
